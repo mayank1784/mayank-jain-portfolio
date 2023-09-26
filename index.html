@@ -320,5 +320,30 @@
           .catch((error) => console.error("Error!", error.message));
       });
     </script>
+    <script>
+        // Check if the device is a mobile device (you can customize this check)
+        function isMobileDevice() {
+          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+      
+        // Function to toggle hover effect on mobile
+        function toggleHoverOnMobile() {
+          if (isMobileDevice()) {
+            const servicesListItems = document.querySelectorAll('.services-list div');
+      
+            servicesListItems.forEach((item) => {
+              item.addEventListener('click', () => {
+                servicesListItems.forEach((otherItem) => {
+                  otherItem.classList.remove('mobile-hover');
+                });
+                item.classList.add('mobile-hover');
+              });
+            });
+          }
+        }
+      
+        // Call the function when the page loads
+        window.addEventListener('load', toggleHoverOnMobile);
+      </script>      
   </body>
 </html>

@@ -170,6 +170,12 @@ nav ul li a:hover::after{
     background: #ff004f;
     transform: translateY(-10px);
 }
+.services-list div.mobile-hover {
+    background: #ff004f;
+    transform: translateY(-10px);
+    transition: background 0.5s, transform 0.5s;
+  }
+  
 
 /* -------------portfolio------------------------------ */
 
